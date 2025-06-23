@@ -1,0 +1,23 @@
+[project]
+name = "code-review-mas"
+version = "0.1.0"
+description = "Multi agents code review system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk==1.4.2",
+    "a2a-sdk==0.2.8",
+    # Thư viện phụ trợ
+    "python-dotenv",      # Để đọc file .env
+    "gitpython",          # Cho GitRetrievalAgent
+
+    # Tối ưu hiệu năng cho a2a-sdk (server)
+    "uvloop",
+    "httptools"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
