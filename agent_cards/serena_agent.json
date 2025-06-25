@@ -1,6 +1,6 @@
 {
-    "name": "Analyze the project codebase",
-    "description": "Only read-only tools, focused on analysis and planning",
+    "name": "coding assistant",
+    "description": "A fully-featured coding assistant",
     "url": "http://localhost:10101/",
     "provider": null,
     "version": "1.0.0",
@@ -28,7 +28,7 @@
         {
             "id": "onboarding",
             "name": "Onboarding",
-            "description": "Help users analyze the project's codebase architecture.",
+            "description": "Only read-only tools, focused on analysis, interactive and planning",
             "tags": [
                 "analyze the project's codebase"
             ],

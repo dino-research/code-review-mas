@@ -15,8 +15,10 @@ from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryPushNotifier, InMemoryTaskStore
 from a2a.types import AgentCard
 from code_review_mas.common import prompts
-from a2a_mcp.common.agent_executor import GenericAgentExecutor
+from code_review_mas.common.agent_executor import GenericAgentExecutor
 from serena_agent import SerenaAgent
+from dotenv import load_dotenv
+load_dotenv()
 
 
 logger = logging.getLogger(__name__)
@@ -24,11 +26,11 @@ logger = logging.getLogger(__name__)
 def get_agent(agent_card: AgentCard):
     """Get the agent, given an agent card."""
     try:
-        if agent_card.name == 'Analyze the project codebase':
-            return TravelAgent(
-                agent_name='AirTicketingAgent',
-                description='Book air tickets given a criteria',
-                instructions=prompts.AIRFARE_COT_INSTRUCTIONS,
+        if agent_card.name == 'coding assistant':
+            return SerenaAgent(
+                agent_name='SerenaAgent',
+                description='A fully-featured coding assistant',
+                instructions=prompts.SERENA_AGENT_INSTRUCTION,
             )
         # if agent_card.name == 'Hotel Booking Agent':
         #     return TravelAgent(
