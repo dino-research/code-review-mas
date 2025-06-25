@@ -1,0 +1,42 @@
+{
+    "name": "Analyze the project codebase",
+    "description": "Only read-only tools, focused on analysis and planning",
+    "url": "http://localhost:10101/",
+    "provider": null,
+    "version": "1.0.0",
+    "documentationUrl": null,
+    "capabilities": {
+        "streaming": "True",
+        "pushNotifications": "True",
+        "stateTransitionHistory": "False"
+    },
+    "authentication": {
+        "credentials": null,
+        "schemes": [
+            "public"
+        ]
+    },
+    "defaultInputModes": [
+        "text",
+        "text/plain"
+    ],
+    "defaultOutputModes": [
+        "text",
+        "text/plain"
+    ],
+    "skills": [
+        {
+            "id": "onboarding",
+            "name": "Onboarding",
+            "description": "Help users analyze the project's codebase architecture.",
+            "tags": [
+                "analyze the project's codebase"
+            ],
+            "examples": [
+                "Analyzing source code in /document/project"
+            ],
+            "inputModes": null,
+            "outputModes": null
+        }
+    ]
+}
