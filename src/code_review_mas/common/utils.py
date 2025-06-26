@@ -46,5 +46,11 @@ def get_mcp_server_config(server_name: str) -> ServerConfig:
             port=50052,
             transport='sse',
             url='http://0.0.0.0:50052/sse')
+    elif server_name=="orchestrator":
+        return ServerConfig(
+            host='0.0.0.0',
+            port=50050,
+            transport='sse',
+            url='http://0.0.0.0:50050/sse')
     else:
         raise(f"Not Found: {server_name}")

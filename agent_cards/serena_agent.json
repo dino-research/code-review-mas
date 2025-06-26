@@ -26,14 +26,31 @@
     ],
     "skills": [
         {
-            "id": "onboarding",
-            "name": "Onboarding",
-            "description": "Only read-only tools, focused on analysis, interactive and planning",
+            "id": "activate_project",
+            "name": "Activate Project",
+            "description": "Activates a project by name.",
             "tags": [
-                "analyze the project's codebase"
+                "project management",
+                "session control"
             ],
             "examples": [
-                "Analyzing source code in /document/project"
+                "Activate the project named 'my_project'",
+                "Switch to the 'serena' project"
+            ],
+            "inputModes": null,
+            "outputModes": null
+        },
+        {
+            "id": "check_onboarding_performed",
+            "name": "Check Onboarding Performed",
+            "description": "Checks whether project onboarding was already performed.",
+            "tags": [
+                "project analysis",
+                "status check"
+            ],
+            "examples": [
+                "Check if onboarding is complete for this project",
+                "Has the onboarding process been run?"
             ],
             "inputModes": null,
             "outputModes": null

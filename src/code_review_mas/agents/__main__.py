@@ -26,26 +26,26 @@ logger = logging.getLogger(__name__)
 def get_agent(agent_card: AgentCard):
     """Get the agent, given an agent card."""
     try:
-        if agent_card.name == 'coding assistant':
+        if agent_card.name == 'Serena Planning Agent':
             return SerenaAgent(
-                agent_name='SerenaAgent',
-                description='A fully-featured coding assistant',
-                instructions=prompts.SERENA_AGENT_INSTRUCTION,
+                agent_name=agent_card.name,
+                description=agent_card.description,
+                instructions=prompts.SERENA_PLANNING_INSTRUCTION,
             )
-        # if agent_card.name == 'Hotel Booking Agent':
-        #     return TravelAgent(
-        #         agent_name='HotelBookingAgent',
-        #         description='Book hotels given a criteria',
-        #         instructions=prompts.HOTELS_COT_INSTRUCTIONS,
-        #     )
+        if agent_card.name == 'Serena Code Q&A Agent':
+            return SerenaAgent(
+                agent_name=agent_card.name,
+                description=agent_card.description,
+                instructions=prompts.SERENA_INTERACTIVE_INSTRUCTION,
+            )
         
             # return LangraphCarRentalAgent()
     except Exception as e:
         raise e
 
 @click.command()
-@click.option('--host', 'host', default='localhost')
-@click.option('--port', 'port', default=10101)
+@click.option('--host', 'host', default='0.0.0.0')
+@click.option('--port', 'port')
 @click.option('--agent-card', 'agent_card')
 def main(host, port, agent_card):
     """Starts an Agent server."""

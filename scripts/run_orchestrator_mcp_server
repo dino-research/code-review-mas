@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+
+cd "$SCRIPT_DIR/.." || exit
+source .venv/bin/activate
+uv run code-review-mas --run orchestrator-server --host "0.0.0.0" --port 50050 --transport sse

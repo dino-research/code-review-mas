@@ -1,0 +1,113 @@
+{
+    "name": "Serena Planning Agent",
+    "description": "An agent focused on planning and analysis of codebases. It excels at understanding project structure, reading files, and formulating a strategy before any code is written.",
+    "url": "http://localhost:10101/",
+    "provider": "Serena",
+    "version": "1.0.0",
+    "documentationUrl": null,
+    "capabilities": {
+        "streaming": "True",
+        "pushNotifications": "True",
+        "stateTransitionHistory": "False"
+    },
+    "authentication": {
+        "credentials": null,
+        "schemes": [
+            "public"
+        ]
+    },
+    "defaultInputModes": [
+        "text",
+        "text/plain"
+    ],
+    "defaultOutputModes": [
+        "text",
+        "text/plain"
+    ],
+    "skills": [
+        {
+            "id": "onboarding",
+            "name": "Onboarding",
+            "description": "Performs onboarding (identifying the project structure and essential tasks, e.g. for testing or building).",
+            "tags": ["project analysis", "setup"],
+            "examples": ["Start the onboarding process for this project"]
+        },
+        {
+            "id": "list_dir",
+            "name": "List Directory",
+            "description": "Lists files and directories in the given directory (optionally with recursion).",
+            "tags": ["file system", "exploration"],
+            "examples": ["List all files in the 'src' directory"]
+        },
+        {
+            "id": "read_file",
+            "name": "Read File",
+            "description": "Reads a file within the project directory.",
+            "tags": ["file system", "code reading"],
+            "examples": ["Read the contents of 'main.py'"]
+        },
+        {
+            "id": "search_for_pattern",
+            "name": "Search For Pattern",
+            "description": "Performs a search for a pattern in the project.",
+            "tags": ["code analysis", "text search"],
+            "examples": ["Search for the pattern 'TODO:' in the project"]
+        },
+        {
+            "id": "find_symbol",
+            "name": "Find Symbol",
+            "description": "Performs a global (or local) search for symbols with/containing a given name/substring (optionally filtered by type).",
+            "tags": ["code analysis", "symbol search"],
+            "examples": ["Find the symbol named 'User'"]
+        },
+        {
+            "id": "find_referencing_symbols",
+            "name": "Find Referencing Symbols",
+            "description": "Finds symbols that reference the symbol at the given location (optionally filtered by type).",
+            "tags": ["code analysis", "code navigation"],
+            "examples": ["Find all references to the 'calculate_total' function"]
+        },
+        {
+            "id": "get_symbols_overview",
+            "name": "Get Symbols Overview",
+            "description": "Gets an overview of the top-level symbols defined in a given file or directory.",
+            "tags": ["code analysis", "code structure"],
+            "examples": ["Get an overview of symbols in 'utils.py'"]
+        },
+        {
+            "id": "list_memories",
+            "name": "List Memories",
+            "description": "Lists memories in Serena's project-specific memory store.",
+            "tags": ["memory management", "context"],
+            "examples": ["List all saved memories"]
+        },
+        {
+            "id": "read_memory",
+            "name": "Read Memory",
+            "description": "Reads the memory with the given name from Serena's project-specific memory store.",
+            "tags": ["memory management", "context"],
+            "examples": ["Read the 'initial_plan' memory"]
+        },
+        {
+            "id": "write_memory",
+            "name": "Write Memory",
+            "description": "Writes a named memory (for future reference) to Serena's project-specific memory store.",
+            "tags": ["memory management", "planning"],
+            "examples": ["Write this plan to a memory named 'refactor_strategy'"]
+        },
+        {
+            "id": "think_about_collected_information",
+            "name": "Think About Collected Information",
+            "description": "Thinking tool for pondering the completeness of collected information.",
+            "tags": ["reasoning", "planning"],
+            "examples": ["Is the information I have collected enough to create a plan?"]
+        },
+        {
+            "id": "think_about_task_adherence",
+            "name": "Think About Task Adherence",
+            "description": "Thinking tool for determining whether the agent is still on track with the current task.",
+            "tags": ["reasoning", "planning"],
+            "examples": ["Am I still following the main objective?"]
+        }
+    ]
+}

@@ -31,7 +31,7 @@ dev = [
 ]
 
 [project.scripts]
-a2a-mcp = "code_review_mas:main"
+code-review-mas = "code_review_mas:main"
 
 [build-system]
 requires = ["hatchling"]

@@ -1,0 +1,99 @@
+{
+    "name": "Serena Code Q&A Agent",
+    "description": "An agent specialized in answering questions about a codebase. It can read files, find symbols, search for patterns, and analyze code structure without making any modifications.",
+    "url": "http://localhost:10102/",
+    "provider": "Serena",
+    "version": "1.0.0",
+    "documentationUrl": null,
+    "capabilities": {
+        "streaming": "True",
+        "pushNotifications": "True",
+        "stateTransitionHistory": "False"
+    },
+    "authentication": {
+        "credentials": null,
+        "schemes": [
+            "public"
+        ]
+    },
+    "defaultInputModes": [
+        "text",
+        "text/plain"
+    ],
+    "defaultOutputModes": [
+        "text",
+        "text/plain"
+    ],
+    "skills": [
+        {
+            "id": "activate_project",
+            "name": "Activate Project",
+            "description": "Activates a project by name to set the context for questions.",
+            "tags": ["project management", "session control"],
+            "examples": ["Let's talk about the 'my_app' project", "Activate project 'serena'"]
+        },
+        {
+            "id": "list_dir",
+            "name": "List Directory",
+            "description": "Lists files and directories to understand the project layout.",
+            "tags": ["file system", "exploration", "q&a"],
+            "examples": ["What files are in the 'src' directory?"]
+        },
+        {
+            "id": "read_file",
+            "name": "Read File",
+            "description": "Reads the content of a specific file.",
+            "tags": ["file system", "code reading", "q&a"],
+            "examples": ["Show me the content of 'config.yml'"]
+        },
+        {
+            "id": "search_for_pattern",
+            "name": "Search For Pattern",
+            "description": "Performs a text search for a pattern across the project.",
+            "tags": ["code analysis", "text search", "q&a"],
+            "examples": ["Where is the database connection string defined?"]
+        },
+        {
+            "id": "find_symbol",
+            "name": "Find Symbol",
+            "description": "Finds a specific symbol (class, function, etc.) by name.",
+            "tags": ["code analysis", "symbol search", "q&a"],
+            "examples": ["Where is the 'User' class defined?"]
+        },
+        {
+            "id": "find_referencing_symbols",
+            "name": "Find Referencing Symbols",
+            "description": "Finds all code locations that reference a given symbol.",
+            "tags": ["code analysis", "code navigation", "q&a"],
+            "examples": ["What parts of the code use the 'calculate_total' function?"]
+        },
+        {
+            "id": "get_symbols_overview",
+            "name": "Get Symbols Overview",
+            "description": "Gets a high-level overview of symbols in a file or directory.",
+            "tags": ["code analysis", "code structure", "q&a"],
+            "examples": ["What functions are available in 'utils.py'?"]
+        },
+        {
+            "id": "read_memory",
+            "name": "Read Memory",
+            "description": "Reads a memory from previous conversations to recall context.",
+            "tags": ["memory management", "context"],
+            "examples": ["What did we discuss about the API earlier?"]
+        },
+        {
+            "id": "summarize_changes",
+            "name": "Summarize Changes",
+            "description": "Provides instructions for summarizing code changes (read-only analysis).",
+            "tags": ["reporting", "analysis"],
+            "examples": ["Can you summarize the recent git changes?"]
+        },
+        {
+            "id": "think_about_collected_information",
+            "name": "Think About Collected Information",
+            "description": "Thinking tool for pondering the completeness of collected information to answer a question.",
+            "tags": ["reasoning", "q&a"],
+            "examples": ["Do you have enough information to answer my question about the database schema?"]
+        }
+    ]
+}
